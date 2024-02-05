@@ -9,16 +9,52 @@ approve your recommendations, so they must be backed up with compelling data ins
 professional data visualizations.
 
 ## Table of contents
-* Company overview
-* Task 
-* Skills Demonstrated
-* Tools used
-* Summary
-* Approach
-* Analysis(code) [click here to see the Code]()
-* [click here to view the Dashboard]()
+* [Company overview]()
+* [Task]() 
+* [Skills Demonstrated]()
+* [Tools used]()
+* [Summary]()
+* [Approach]()
+* [click here to see the Code]()
+* [click here to view the Dashboard](https://public.tableau.com/views/CyclisticBikeShareDashboard2022/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link)
+
+### Company Overview
+In 2016, Cyclistic launched a successful bike-share offering. Since then, the program has grown to a fleet of 5,824 bicycles that are
+geotracked and locked into a network of 692 stations across Chicago. The bikes can be unlocked from one station and returned to any other station in the system anytime.
+
+Until now, Cyclistic’s marketing strategy relied on building general awareness and appealing to broad consumer segments. One
+approach that helped make these things possible was the flexibility of its pricing plans: single-ride passes, full-day passes, and
+annual memberships. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who
+purchase annual memberships are Cyclistic members.
+
+
+Cyclistic’s finance analysts have concluded that annual members are much more profitable than casual riders. Although the pricing
+flexibility helps Cyclistic attract more customers, Moreno believes that maximizing the number of annual members will be key to
+future growth. Rather than creating a marketing campaign that targets all-new customers, Moreno believes there is a very good
+chance to convert casual riders into members. She notes that casual riders are already aware of the Cyclistic program and have
+chosen Cyclistic for their mobility needs.
+
+
+Moreno has set a clear goal: Design marketing strategies aimed at converting casual riders into annual members. In order to do
+that, however, the marketing analyst team needs to better understand how annual members and casual riders differ, why casual
+riders would buy a membership, and how digital media could affect their marketing tactics. Moreno and her team are interested in
+analyzing the Cyclistic historical bike trip data to identify trends.
+### Task
+**Three questions will guide the future marketing program:**
+* How do annual members and casual riders use Cyclistic bikes differently?
+* Why would casual riders buy Cyclistic annual memberships?
+* How can Cyclistic use digital media to influence casual riders to become members?
+## Moreno has assigned you the first question to answer: How do annual members and casual riders use Cyclistic bikes differently?
+You will produce a report with the following deliverables:
+* A clear statement of the business task
+* A description of all data sources used
+* Documentation of any cleaning or manipulation of data
+* A summary of your analysis
+* Supporting visualizations and key findings
+* Your top three recommendations based on your analysis
+
   ### Skills demonstrated
---Some of the skills demonstrated for a pizza sales report are:-- 
+** Some of the skills demonstrated for a pizza sales report are: **
 * Data acquisition: Obtained the data made available by Motivate International Inc. 
 * Data transformation: I have cleaned, filtered, and transformed data using SQL, a structured query 
 language for manipulating and analyzing data. 
@@ -35,7 +71,9 @@ such as identifying sales trends, customer preferences, product performance.
 concise manner, using appropriate language, format, and style.
 ### Tools Used
 MS OFFICE/ EXCEL: VERSION 2016
+
 SQL BIGQUERY
+
 © 2024 TABLEAU SOFTWARE, LLC, A SALESFORCE COMPANY. ALL RIGHTS RESERVED
 
 ### Summary
@@ -70,21 +108,34 @@ meet their goals for riding, mostly on weekends
 ### Approach:
 The first step in the analysis is to define the objective and scope of the Project. This means coming up 
 with a clear and specific question or problem that you want to solve with data, such as
---Ask phase:-- How do annual members and casual riders use Cyclistic bikes differently?
---Prepare phase:--
+
+**Ask phase:** How do annual members and casual riders use Cyclistic bikes differently?
+
+**Prepare phase:**
+
 Data is located in the form of CSV files in the system. And it is As a disclaimer the data has been made 
 available by Motivate International Inc. under this license. It is organized in the table form.
 A good data source is ROCCC which stands for Reliable, Original, Comprehensive, Current, and Cited.
+
 Reliable — high — it has 476888 rows
+
 Original — high — provided by the company directly
+
 Comprehensive — high — Parameters match parameters
+
 Current — med — Data is 3 years old and somehow relevent
+
 Cited — high — Data collected from company, hence useful
+
 **Process phase:**
+
 * I imported the tables into SQL bigquery for analysis for cleaning and analyzing.
 * I used a union all query to combine the tables. After that, I saved the results into new table for 
 analysis.
+
+
 **I used the new table for cleaning the data**.
+
 * At first I check for the data and removed all the duplicate rows from the data.
 * Checked for all the missing and NULL values and remove the data with missing values.
 * I used the date column to extract days, months, time into separate columns.
@@ -92,68 +143,28 @@ analysis.
 * I removed the column where started_at was bigger than ended_at.
 * I checked for any typos and then corrected those typos.
   
-NOTE: I saved all the queries I used to clean the data in the project file.
+> **NOTE:** I saved all the queries I used to clean the data in the project file.
+
 After cleaning the data, I saved the cleaned data into separate table for analysis where I analyzed the 
 following measures:
-* No of rides: I selected rideable type and used count function for no of rides from the table and 
-grouped by rideable type, order by no of rides descending order so that the most Rides comes 
-first
-SELECT
-rideable_type, 
-COUNT
-(ride_id) AS no_of_user_types
-FROM `premium-axis-403220.Cyclistic_bike_share_2022.2022_bike_share`
-GROUP BY rideable_type
-ORDER BY no_of_user_types DESC;
- Most patronized bike types: Calculated the number of rides by Bike type and user type. 
-Grouped the data by bike type and user type and ordered by descending.
-SELECT
-rideable_type AS bike_type,
-member_casual AS user_type,
-COUNT(ride_id) AS no_of_rides
-FROM
-`premium-axis-403220.Cyclistic_bike_share_2022.2022_bike_share`
-GROUP BY rideable_type, member_casual
-ORDER BY no_of_rides DESC;
-5
-Presented by kainat Liaqat
- Average length of ride in seconds: Calculated the average ride length by using Avg function by 
-its user types and used the round function for 2 decimal places.
-SELECT
-member_casual AS user_type,
-ROUND
-(AVG(ride_length), 2) AS avg_ride_length
-FROM
-`premium-axis-403220.Cyclistic_bike_share_2022.2022_bike_share`
-GROUP BY member_casual;
- Most active days: Calculated the no of rides in a day by its user and bike type.
-SELECT
-day_started as day_of_week,
-COUNT(day_started) AS no_of_rides_per_day,
-member_casual as user_type,
-rideable_type as bike_type
-FROM
-`premium-axis-403220.Cyclistic_bike_share_2022.2022_bike_share`
-GROUP BY member_casual, day_started,rideable_type;
-6
-Presented by kainat Liaqat
- Max ride length: calculated the maximum ride length by is user and bike type using MAX 
-function.
-SELECT
-max(ride_length) as max_ride_length,
-member_casual as user_type,
-rideable_type as bike_type
-FROM
-`premium-axis-403220.Cyclistic_bike_share_2022.2022_bike_share`
-GROUP BY member_casual,rideable_type;
- Most active month by usertypes: calculated the most active days by its user and bike type:
-SELECT
-count(month_started) as no_of_rides_per_month,
-member_casual as user_type,
-rideable_type as bike_type
-FROM
-`premium-axis-403220.Cyclistic_bike_share_2022.2022_bike_share`
-GROUP BY member_casual,rideable_type;
-7
 
-https://public.tableau.com/views/CyclisticBikeShareDashboard2022/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link
+**No of rides:** I selected rideable type and used count function for no of rides from the table and 
+grouped by rideable type, order by no of rides descending order so that the most Rides comes 
+first.
+
+**Most patronized bike types:** Calculated the number of rides by Bike type and user type. 
+Grouped the data by bike type and user type and ordered by descending.
+
+**Average length of ride in seconds:** Calculated the average ride length by using Avg function by 
+its user types and used the round function for 2 decimal places.
+
+**Most active days:** Calculated the no of rides in a day by its user and bike type
+
+**Max ride length:** calculated the maximum ride length by is user and bike type using MAX 
+function.
+
+**Most active month by usertypes:** calculated the most active days by its user and bike type:
+
+## [To view the Code click here]()
+
+
