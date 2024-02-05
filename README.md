@@ -15,7 +15,7 @@ professional data visualizations.
 * [Tools used]()
 * [Summary]()
 * [Approach]()
-* [click here to see the Code]()
+* [click here to see the Code](https://github.com/kainat1996/Cyclistic-Bike-share-capstone/blob/master/cleaning_data.sql)
 * [click here to view the Dashboard](https://public.tableau.com/views/CyclisticBikeShareDashboard2022/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 ### Company Overview
@@ -142,7 +142,9 @@ analysis.
 * I used time in seconds for my analysis of bike share data.
 * I removed the column where started_at was bigger than ended_at.
 * I checked for any typos and then corrected those typos.
-  
+
+[View the Code](https://github.com/kainat1996/Cyclistic-Bike-share-capstone/blob/master/cleaning_data.sql)
+ 
 > **NOTE:** I saved all the queries I used to clean the data in the project file.
 
 After cleaning the data, I saved the cleaned data into separate table for analysis where I analyzed the 
@@ -165,6 +167,6 @@ function.
 
 **Most active month by usertypes:** calculated the most active days by its user and bike type:
 
-## [To view the Code click here](https://github.com/kainat1996/Cyclistic-Bike-share-capstone/blob/master/analyze_data.sql)
+## [View the Code](https://github.com/kainat1996/Cyclistic-Bike-share-capstone/blob/master/analyze_data.sql)
 
 
