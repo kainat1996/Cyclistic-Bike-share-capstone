@@ -44,7 +44,7 @@ analyzing the Cyclistic historical bike trip data to identify trends.
 * How do annual members and casual riders use Cyclistic bikes differently?
 * Why would casual riders buy Cyclistic annual memberships?
 * How can Cyclistic use digital media to influence casual riders to become members?
-## Moreno has assigned you the first question to answer: How do annual members and casual riders use Cyclistic bikes differently?
+## Moreno has assigned the first question to answer: How do annual members and casual riders use Cyclistic bikes differently?
 You will produce a report with the following deliverables:
 * A clear statement of the business task
 * A description of all data sources used
