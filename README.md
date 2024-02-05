@@ -143,7 +143,7 @@ analysis.
 * I removed the column where started_at was bigger than ended_at.
 * I checked for any typos and then corrected those typos.
 
-[View the Code](https://github.com/kainat1996/Cyclistic-Bike-share-capstone/blob/master/cleaning_data.sql)
+## [View the Code](https://github.com/kainat1996/Cyclistic-Bike-share-capstone/blob/master/cleaning_data.sql)
  
 > **NOTE:** I saved all the queries I used to clean the data in the project file.
 
